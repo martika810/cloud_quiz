@@ -1,0 +1,78 @@
+<html>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"> 
+<!-- Latest compiled and minified JavaScript -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@3.0.13/dist/amazon-cognito-identity.min.js"></script>
+
+<div class="container">
+
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+      <span class="sr-only">60% Complete</span>
+    </div>
+  </div>
+  <h1 class="question">You are a dog.</h1>
+    <div class="btn-group-lg btn-group" data-toggle="buttons">
+      <row>
+        <div class="col-lg-6">
+          <label class="btn btn-primary">
+            <input type="radio" name="options" id="option1"> True
+          </label>
+        </div>
+        <!--<span>or</span>-->
+        <div class="col-lg-6">
+          <label class="btn btn-primary">
+            <input type="radio" name="options" id="option2"> False
+          </label>
+        </div>
+      </row>
+  </div>
+</div>
+<script>
+// 	var poolData = {
+// 		UserPoolId : 'eu-west-1_EMCdkNZVA',
+// 		ClientId : '630dctg37alv4v3c2g4653q0ip'
+// 	};
+// 	var authenticationData = {
+//         Username : 'martika810',
+//         Password : 'T3st1ng?!',
+//     };
+//     var authenticationDetails = new AmazonCognitoIdentity.AuthenticationDetails(authenticationData);
+//     var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+//     var userData = {
+//     	Username: 'username',
+//     	Pool: userPool
+//     }
+//     var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
+// 	
+// 	cognitoUser.authenticateUser(authenticationDetails,{
+// 		onSuccess: function (result) {
+//             var accessToken = result.getAccessToken().getJwtToken();
+//             
+//             /* Use the idToken for Logins Map when Federating User Pools with identity pools or when passing through an Authorization Header to an API Gateway Authorizer*/
+//             var idToken = result.idToken.jwtToken;
+//             console.log('user name authenticated');
+//         },
+// 
+//         onFailure: function(err) {
+//             alert(err.message || JSON.stringify(err));
+//             return;
+//         },
+// 	});
+	$.ajax({
+		type:"GET",
+		ur:"https://kyw8h96294.execute-api.eu-west-1.amazonaws.com/aws_questions_stage",
+		crossDomain: true,
+		contentType: "application/json",
+		success: function(data,status){
+			console.log('Request to the api');
+			console.log(JSON.stringify(data.question));
+		}
+	});
+	
+</script>
+
+</html>
