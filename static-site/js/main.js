@@ -5,7 +5,7 @@ $.ajax({
 		contentType: "application/json",
 		beforeSend: function(xhr){
 			xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-			xhr.setRequestHeader("Access-Control-Allow-Methods", "OPTIONS,GET");
+			xhr.setRequestHeader("Access-Control-Allow-Methods", "OPTIONS,POST");
 			xhr.setRequestHeader("Access-Control-Allow-Headers", "X-Requested-With,Access-Control-Allow-Headers,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token");
 			xhr.setRequestHeader("Content-Type", "application/json");
 		},
