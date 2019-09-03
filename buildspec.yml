@@ -10,6 +10,6 @@ phases:
       java: corretto11
     commands:
       - echo Test S3 calls
-      - aws s3 ls
+      - aws s3 ls s3://awsquizlabs.com
     finally:
       - echo This always runs even if the update or install command fails
