@@ -9,7 +9,7 @@ phases:
     runtime-versions:
       java: corretto11
     commands:
-      - aws s3 sync ./static-site s3://awsquizlabs.com --recursive
+      - aws s3 sync ./static-site s3://awsquizlabs.com
       - echo List bucket files
       - aws s3 ls s3://awsquizlabs.com
     finally:
