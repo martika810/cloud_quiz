@@ -1,6 +1,7 @@
 $.ajax({
 		type:"GET",
 		ur:"https://kyw8h96294.execute-api.eu-west-1.amazonaws.com/aws_questions_stage/",
+		dataType: "json",
 		crossDomain: true,
 		contentType: "application/json",
 		success: function(data,status){
