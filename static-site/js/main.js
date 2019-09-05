@@ -1,6 +1,6 @@
 $.ajax({
 		type:"POST",
-		ur:"https://kyw8h96294.execute-api.eu-west-1.amazonaws.com/aws_questions_stage/",
+		ur:"https://kyw8h96294.execute-api.eu-west-1.amazonaws.com/dev",
 		crossDomain: true,
 		contentType: "application/json",
 		beforeSend: function(xhr){
